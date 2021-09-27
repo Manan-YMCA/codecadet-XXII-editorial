@@ -2,10 +2,6 @@
 using namespace std;
 #define ll long long int 
 #define fastIO ios_base::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr)
-// #define INPUT_OUTPUT {\
-//     freopen("input.txt","r",stdin);\
-//     freopen("output.txt","w",stdout);\
-// }
 
 ll query(ll idx, ll BIT[]) {
     ll result = 0;
@@ -46,17 +42,12 @@ void solve(ll t) {
         ll idx = pp[i].second;
         ll value = query(idx - 1, BIT) + pp[i].first;
         add(idx, BIT, value , n);
-        for(ll j=0;j<=n;j++)cout<<BIT[j]<<" ";
-        cout<<"\n";
     }
     cout<<query(n, BIT)<<endl;
 
 }
 int main() {
 
-    #ifndef ONLINE_JUDGE
-    INPUT_OUTPUT;//file handlings
-    #endif
     fastIO;// fast input output
     ll t;
     t=1;
